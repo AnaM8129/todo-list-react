@@ -1,0 +1,86 @@
+@import "../../variables.scss";
+
+.image-section {
+  width: 100%;
+  height: 40%;
+  background: {
+    repeat: no-repeat;
+  }
+  &__title {
+    color: $white;
+    font-size: 1.8em;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    transition: 0.4s;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    height: auto;
+    justify-content: center;
+    padding-top: 5%;
+    gap: 25%;
+  }
+}
+
+.icon-moon {
+  font-size: 30px;
+  cursor: pointer;
+  color: $white;
+  transition: 0.4s;
+
+  &:hover {
+    rotate: (-90deg);
+  }
+}
+
+.create-new-task {
+  background-color: $white;
+  padding: 15px;
+  align-self: center;
+  justify-self: center;
+  margin: auto;
+  width: 450px;
+  margin-top: 1%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: $gray;
+
+  &:hover {
+    width: 400px;
+  }
+}
+//Dark theme classes
+.create-new-task--black {
+  @extend .create-new-task;
+  background-color: $black;
+}
+
+.icon-sun {
+  @extend .icon-moon;
+  color: $black;
+}
+
+@media (max-width: 600px) {
+  .image-section__container {
+    padding-top: 15%;
+  }
+  .create-new-task {
+    width: 400px;
+    &:hover {
+      width: 350px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .image-section__container {
+    padding-top: 22%;
+  }
+  .create-new-task {
+    width: 300px;
+    margin-top: 6%;
+  }
+}

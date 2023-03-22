@@ -1,0 +1,203 @@
+@import "../../variables.scss";
+
+.tasks-container {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  margin: auto;
+  border-radius: 8px 8px 0 0;
+  width: 450px;
+  height: 350px;
+  position: absolute;
+  margin-top: -6%;
+  box-shadow: 2px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  position: relative;
+  transition: 0.4s;
+}
+//Scroll bar personalizated
+.tasks-container::-webkit-scrollbar {
+  width: 10px;
+  background: none;
+}
+.tasks-container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(83, 238, 229);
+  background: linear-gradient(
+    180deg,
+    rgba(83, 238, 229, 1) 0%,
+    rgba(202, 51, 208, 1) 100%
+  );
+}
+//Mobile design filters container
+.filters-container {
+  visibility: hidden !important;
+  height: 0px;
+  margin-top: -50%;
+  justify-content: center;
+  justify-items: center;
+  gap: 10px;
+  align-self: flex-end;
+  margin-bottom: 10%;
+  justify-self: center;
+  background-color: $white;
+  box-shadow: 2px 2px 10px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  transition: 0.4s;
+}
+//Desktop design filters container
+.desktop-section-container {
+  display: flex;
+  gap: 10px;
+}
+//Desktop design footer container
+.section-footer {
+  background-color: $white;
+  border-radius: 0 0 8px 8px;
+  width: 450px;
+  height: 50px;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+  box-shadow: 0px 0px 10px 8px rgba(158, 158, 158, 0.2);
+  margin-bottom: 10%;
+  transition: 0.4s;
+}
+//text-footer
+.text-footer {
+  color: $gray;
+  font-size: 14px;
+  cursor: pointer;
+}
+//Design active text
+.active-text {
+  color: $blue;
+  font-size: 14px;
+  cursor: pointer;
+}
+//Each task
+.task {
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid rgb(197, 197, 197);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text-task {
+  color: black;
+  transition: 0.4s;
+}
+.container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 90%;
+}
+.check-container {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid $gray;
+  cursor: pointer;
+}
+.close-icon {
+  cursor: pointer;
+  font-size: 23px;
+  color: $gray;
+}
+
+//Complete task styles
+.check-container--complete {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  background-image: url(https://cdn-icons-png.flaticon.com/512/7191/7191610.png);
+  background-size: cover;
+}
+.text-task--complete {
+  color: $gray;
+  text-decoration: line-through;
+}
+
+//Dark design
+.tasks-container--dark {
+  @extend .tasks-container;
+  background-color: $black;
+}
+.text-task--dark {
+  color: $white;
+}
+.section-footer--dark {
+  background-color: $black;
+  border-radius: 0 0 8px 8px;
+  width: 450px;
+  height: 50px;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+  box-shadow: 0px 0px 10px 8px rgba(4, 0, 24, 0.932);
+  margin-bottom: 10%;
+  transition: 0.4s;
+  border-top: 1px solid $gray;
+}
+.filters-container-dark {
+  @extend .filters-container;
+  background-color: $black;
+  box-shadow: 0px 0px 10px 10px rgba(4, 0, 24, 0.932);
+}
+@media (max-width: 480px) {
+  .tasks-container {
+    margin-top: -15%;
+    width: 300px;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 8px 8px 0 0;
+  }
+  .filters-container {
+    visibility: visible !important;
+    margin-top: 5px;
+    height: 50px;
+  }
+  .section-footer {
+    background-color: $white;
+    border-radius: 0 0 8px 8px;
+    width: 300px;
+    height: 50px;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+    box-shadow: 0px 0px 10px 8px rgba(158, 158, 158, 0.2);
+  }
+  .section-footer--dark {
+    background-color: $black;
+    border-radius: 0 0 8px 8px;
+    width: 300px;
+    height: 50px;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+    box-shadow: 0px 0px 10px 8px rgba(2, 1, 20, 0.87);
+  }
+  .desktop-section-container {
+    display: none;
+  }
+}

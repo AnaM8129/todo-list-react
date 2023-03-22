@@ -1,0 +1,19 @@
+@import "../../variables.scss";
+
+.background-section {
+  width: 100%;
+  height: 60%;
+  // background-color: $white;
+  position: relative;
+  display: grid;
+  transition: 0.4s;
+}
+.background-section--dark {
+  @extend .background-section;
+  background-color: $black;
+}
+@media (max-width: 480px) {
+  .background-section {
+    height: 70%;
+  }
+}

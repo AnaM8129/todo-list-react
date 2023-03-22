@@ -1,0 +1,92 @@
+@import "../../variables.scss";
+
+.transparent-background {
+  background: rgba(0, 0, 0, 0.5);
+  width: 200%;
+  height: 200vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  margin-right: 50%;
+}
+.modal {
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  margin: auto;
+  justify-self: center;
+  align-self: center;
+  width: 300px;
+  height: 300px;
+  z-index: 100;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+
+  &__icon-close {
+    font-size: 25px;
+    border-radius: 15px;
+    color: $white;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background: rgb(57, 204, 195);
+    background: linear-gradient(
+      90deg,
+      rgba(57, 204, 195, 1) 0%,
+      rgba(213, 68, 219, 1) 100%
+    );
+  }
+  &__title {
+    font-size: 20px;
+    text-align: center;
+    color: $gray;
+    margin-bottom: 10%;
+  }
+  &__input {
+    width: 100%;
+    padding: 7px;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid rgb(172, 172, 172);
+    margin-bottom: 10%;
+    background: none;
+  }
+
+  &__button {
+    background: rgb(57, 204, 195);
+    background: linear-gradient(
+      90deg,
+      rgba(57, 204, 195, 1) 0%,
+      rgba(213, 68, 219, 1) 100%
+    );
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    color: $white;
+    font-size: 16px;
+    letter-spacing: 2px;
+    width: 100%;
+  }
+}
+
+.modal__input::placeholder {
+  font-size: 15px;
+  font-family: "Josefin Sans", sans-serif;
+  color: rgb(194, 194, 194);
+}
+.footer-text {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10%;
+  color: rgb(139, 139, 139);
+}
+//Dark theme
+.modal--dark {
+  @extend .modal;
+  background-color: $black;
+}
+.modal__input--dark {
+  @extend .modal__input;
+  color: $white;
+}
